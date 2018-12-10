@@ -1,13 +1,17 @@
 """
 Process a string to crunch out pairs of upper and lowercase letters (same letter) until none remain
 Return the length of the final string
-Lookups:
+Lookups: python String functions
 
 Comments: Try 1 is a recursive algorithm to solve and re-solve the string until it can't be solved anymore.
 This is too slow to work on a 50,000 character string
 
-Try 2 is to use python's string.strip() function. I'll build a set of all of the combinations we're looking for and
-just strip them out of the string. Should be faster since there's no comparisons being made within the string
+Try 2 is super simple, build a new string, pop the match off the new one if it's a match, append it if not. This is
+basically what I originally wanted to do but got lost in the weeds. I lost the track when I realized strings are immutable
+Seeing a similar solution online put me back on the path by using the string to build a list, which is mutable.
+
+Part2 was pretty easy with string.replace() There might have been a faster way than iterating through all 26 letters
+but it was fast enough for the use case.
 """
 
 import string
